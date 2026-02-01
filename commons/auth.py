@@ -10,8 +10,8 @@ load_dotenv()
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-JWT_SECRET = os.environ.get("secret")
-JWT_ALGORITHM = os.environ.get("algorithm")
+JWT_SECRET = os.environ.get("JWT_SECRET")
+JWT_ALGORITHM = os.environ.get("JWT_ALGORITHM", "HS256")
 
 
 def signJWT(

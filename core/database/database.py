@@ -1,12 +1,16 @@
-import os
 from motor.motor_asyncio import AsyncIOMotorClient
 from odmantic import AIOEngine
 from dotenv import load_dotenv
-from core import logger
+from commons.loggers import logger
+import os
+import time
 
 load_dotenv()
 
 logging = logger(__name__)
+
+JWT_SECRET = os.environ.get("JWT_SECRET")
+JWT_ALGORITHM = os.environ.get("JWT_ALGORITHM", "HS256")
 
 
 class Database:
